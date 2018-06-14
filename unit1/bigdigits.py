@@ -23,7 +23,16 @@ try:
         while column < len(digits):
             number = int(digits[column])
             digit = Digits[number]
-            line += digit[row] + '  '
+            i = 0
+            line_num = digit[row]
+            line_num_fin = ''
+            while i < len(line_num):
+                if line_num[i] == '*':
+                    line_num_fin += str(number)
+                else:
+                    line_num_fin += ' '
+                i += 1
+            line += line_num_fin + '  '
             column += 1
         print(line)
         row += 1
